@@ -1,0 +1,15 @@
+{
+    "workbench.editor.autoLockGroups": {
+        "jupyter-notebook": true,
+        "notebookOutputEditor": true,
+        "workbench.editorinputs.searchEditorInput": true,
+        "repl": true,
+        "workbench.editors.gettingStartedInput": true,
+        "imagePreview.previewEditor": true,
+        "vscode.audioPreview": true,
+        "vscode.videoPreview": true,
+        "jsProfileVisualizer.cpuprofile.table": true,
+        "jsProfileVisualizer.heapprofile.table": true,
+        "workbench.input.interactive": true
+    }
+}
