@@ -11,5 +11,6 @@
         "jsProfileVisualizer.cpuprofile.table": true,
         "jsProfileVisualizer.heapprofile.table": true,
         "workbench.input.interactive": true
-    }
+    },
+    "editor.inlayHints.enabled": "onUnlessPressed"
 }
