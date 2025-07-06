@@ -5,66 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WDD 131 – Dynamic Web Fundamentals project by Cephas Kwabie">
-
-    <title> WDD 131 - Dynamic Web Fundamentals - Cephas Kwabie</title>
-
+    <title>WDD 131 - Dynamic Web Fundamentals - Cephas Kwabie</title>
     <link rel="stylesheet" href="styles/base.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap"
+        rel="stylesheet">
     <script src="scripts/getdates.js" defer></script>
-        
 </head>
 
-
-<body> 
+<body>
     <header>
+        <div class="header-wrapper">
+            
         <h1>
             <span id="course-title">WDD 131 - Dynamic Web Fundamentals - Cephas Kwabie</span>
         </h1>
         <nav>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/cephas-kwabie" target="_blank">LinkedIn</a></li>
+            <div class="nav-wrapper">
+                <ul>
 
-                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne?lang=eng">Scripture</a></li>
-
+                    <li><a href="https://www.linkedin.com/in/cephas-kwabie" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a></li>
+                    <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne?lang=eng" target="_blank"
+                            rel="noopener">Scripture</a></li>
                 <li><a href="/week01/">Final Project</a></li>
+
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="content-layout">
+        <section class="card left-card">
+            <h2>About Me</h2>
+            <div class="card-content-row about-me-row">        
+                <div>
+                    
+                    <p>
+                        My name is Cephas Kwabie, and I am a student at BYU-Idaho. I am currently enrolled in the WDD
+                        131 course,
+                        which focuses on dynamic web fundamentals. I'm a software development student exploring the
+                        worlds of
+                        frontend design, data analysis, and freelance writing. 
+                    </p>
+                </div>
+                <img src="images/cropped.jpg" alt="Cephas Kwabie" width="120" height="120">
+            </div>
+            <div class="accra-label">Accra - Ghana</div>
+            <div class="card-content-row accra-row">
 
-        <section class="card">
+                <figure style="margin:0;">
+                    <img src="images/gh flag.png" alt="Accra, Ghana" width="120" height="120">
 
-            <h2> About  Me</h2>
-            <img src="images/cropped.jpg" alt="A picture of Cephas Kwabie" width="400" height="300">
-            <p>My name is Cephas Kwabie, and I am a student at BYU-Idaho. I am currently enrolled in the WDD 131 course, which focuses on dynamic web fundamental. I'm a software development student exploring the worlds of frontend design, data analysis, and freelance writing. I
-            enjoy creating responsive layouts and meaningful user experiences.s.</p>
-
+                    <figcaption style="text-align:center; font-size:0.95rem; color:#555;">Official flag of Ghana</figcaption>
+                </figure>
+                <div>
+                    
+                    <p>
+                        Accra is the capital city of Ghana, located on the Gulf of Guinea. It is known for its vibrant
+                        culture, rich
+                        history, and diverse population. The city serves as the political, economic, and educational
+                        center of the
+                        country. 
+                    </p>
+                    <p>
+                        Accra is home to several landmarks, including the Kwame Nkrumah Mausoleum, Independence Arch, and
+                        the bustling
+                        Makola Market.</p>
+            </div>
         </section>
-        
-        <section class="card">
-           
-            <h2>Accra - Ghana</h2>
-            <img src="images/gh flag.png" alt="The Flag of Ghana" width="400" height="300">
-            <p>Accra is the capital city of Ghana, located on the Gulf of Guinea. It is known for its vibrant culture, rich history, and diverse population. The city serves as the political, economic, and educational center of the country.</p>
-            <p>Accra is home to several landmarks, including the Kwame Nkrumah Mausoleum, Independence Arch, and the bustling Makola Market. The city also boasts beautiful beaches, such as Labadi Beach and Teshie Beach, which are popular among locals and tourists alike.</p>
-            <p>Ghana's flag, which features red, yellow, and green stripes with a black star in the center, symbolizes the country's struggle for independence and its commitment to freedom and unity.</p>
-
+        <section class="card resources right-card">
+            <h2>Web Dev Resources</h2>
+            <ul>
+                <li><a href="https://dev.to" target="_blank" rel="noopener">Dev.to Community</a></li>
+                <li><a href="https://css-tricks.com" target="_blank" rel="noopener">CSS Tricks</a></li>
+                <li><a href="https://www.smashingmagazine.com" target="_blank" rel="noopener">Smashing Magazine</a></li>
+                <li><a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a></li>
+                <li><a href="https://placeholder.com/" target="_blank" rel="noopener">Image Placeholder</a></li>
+                <li><a href="https://www.udemy.com" target="_blank" rel="noopener">Udemy</a></li>
+            </ul>
         </section>
-
     </main>
 
     <footer>
-
         <p>&copy; <span id="currentyear"></span> Cephas Kwabie, Accra - Ghana.</p>
         <p id="lastModified"></p>
-        
     </footer>
-
-</body>
-
-</html>
