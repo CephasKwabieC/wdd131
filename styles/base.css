@@ -176,3 +176,13 @@ footer {
     border-bottom: 1px solid #222;
     box-sizing: border-box;
 }
+
+
+.flag-figure {
+    margin: 0;
+}
+.flag-caption {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+}
