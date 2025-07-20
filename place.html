@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana Country Information</title>
+    <meta name="description"
+        content="Explore key information about Ghana, including its geography, population, and weather.">
+
+    <link rel="stylesheet" href="styles/place.css">
+
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Ghana</h1>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <picture>
+                <source media="(max-width: 400px)" srcset="images/hero_small.webp">
+                <source media="(max-width: 768px)" srcset="images/hero_medium.webp">
+                <img src="images/hero_large.webp" alt="Vibrant Ghanaian landscape" loading="lazy">
+            </picture>
+        </div>
+
+        <section class="country-info">
+            <h2 class="section-title">Data</h2>
+            <div class="data-content">
+                <p><strong>Area:</strong> <span>238,535 sq km</span></p>
+                <p><strong>Population:</strong> <span>33,500,000</span></p>
+                <p><strong>Capital:</strong> <span>Accra</span></p>
+                <p><strong>Languages:</strong> <span>English, Akan, Ewe, Ga, Dagbani, Nzema, etc.</span></p>
+                <p><strong>Currency:</strong> <span>Ghanaian Cedi (GHS)</span></p>
+                <p><strong>Time Zone:</strong> <span>GMT</span></p>
+                <p><strong>Calling Code:</strong> <span>+233</span></p>
+                <p><strong>Internet TLD:</strong> <span>.gh</span></p>
+            </div>
+        </section>
+
+        <section class="weather-info">
+            <h2 class="section-title">Weather</h2>
+            <div class="weather-content">
+                <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+                <p><strong>Condition:</strong> <span id="condition"></span></p>
+                <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+                <p><strong>Wind:</strong> <span id="windSpeed"></span></p>
+                <p><strong>Wind Chill:</strong> <span id="windChill"></span></p>
+                <img id="mobileWeatherIcon" src="images/1530391_weather_clouds_sun_sunny_icon.svg" alt="Sunny weather icon"
+                    class="mobile-only-weather-icon">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🎈 Cephas Kwabie. 🎈 Accra - Ghana.</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+/* --- Root Variables for Colors --- */
+:root {
+    --primary-red: #CE1126;
+    /* Ghana Red */
+    --primary-gold: #FCD116;
+    /* Ghana Gold/Yellow */
+    --primary-green: #006B3F;
+    /* Ghana Green */
+    --black-star: #000000;
+    /* For the star if used directly */
+
+    --header-footer-bg: var(--primary-red);
+    /* Header and Footer background */
+    --section-title-bg: var(--primary-gold);
+    /* Title bars for Data/Weather */
+    --box-bg: rgba(255, 255, 255, 0.88);
+    /* Slightly less transparent white for info boxes */
+    --text-color: #333;
+    --heading-color: #fff;
+    /* White for section titles */
+    --body-bg-color: black;
+    /* Light background for body */
+}
+
+
+/* --- Base Styles (Mobile-First) --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: block;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    color: var(--heading-color);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main {
+    flex-grow: 1;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero Section for mobile - it just flows as content */
+.hero-section {
+    width: 100%;
+    /* No absolute positioning on mobile, it flows naturally */
+    border-radius: 8px;
+    /* Match main's border-radius */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* Hide the pseudo-element weather icon on mobile */
+.section-title::after {
+    display: none;
+}
+
+/* Display the SVG weather icon only on mobile */
+.mobile-only-weather-icon {
+    display: block;
+    /* Show on mobile */
+    width: 40px;
+    /* Size your SVG icon */
+    height: 40px;
+    margin-top: 10px;
+}
+
+
+/* Styling for country-info and weather-info boxes */
+.country-info,
+.weather-info {
+    background-color: var(--box-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin: 0 20px;
+    /* Horizontal margin on mobile */
+    z-index: 1;
+    /* Ensure these are above the background image when positioned */
+    overflow: hidden;
+}
+
+/* Common styling for the "Data" and "Weather" titles */
+.section-title {
+    background-color: var(--section-title-bg);
+    color: var(--heading-color);
+    padding: 10px 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    /* Needed for pseudo-element positioning */
+}
+
+
+.data-content p,
+.weather-content p {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.data-content p strong,
+.weather-content p strong {
+    color: #555;
+}
+
+.weather-info {
+    text-align: left;
+}
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    background-color: var(--primary-green);
+    color: var(--heading-color);
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* --- Wide Screen View (Media Query) --- */
+@media (min-width: 768px) {
+    main {
+        padding: 0;
+        min-height: 600px;        
+        max-width: 1200px;
+        margin: 40px auto;
+        background-color: darkgreen;
+        box-shadow: none;
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hero Section - positioned absolutely as the background */
+    .hero-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Fill the main container */
+        z-index: 0;
+        /* Place it behind other content */
+        border-radius: 8px;
+        box-shadow: none;
+        /* No extra shadow on the hero section itself in wide view */
+        opacity: 0.9;
+        /* Maintain opacity */
+    }
+
+    .hero-section img {
+        display: block;
+        /* Ensure the image is visible */
+        width: 100%;
+        height: 100%;
+        /* Make image fill the hero section */
+        object-fit: cover;
+        /* Cover the container, cropping if necessary */
+        border-radius: 8px;
+        /* Match hero-section's border-radius */
+    }
+
+    /* Position the country info box top-left */
+    .country-info {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 350px;
+        background-color: var(--box-bg);
+        z-index: 1;
+        /* Place on top of image */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        margin: 0;
+        /* Reset mobile margin */
+    }
+
+    /* Position the weather info box bottom-right */
+    .weather-info {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 280px;
+        background-color: var(--box-bg);
+        z-index: 1;
+        /* Place on top of image */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        margin: 0;
+        /* Reset mobile margin */
+    }
+
+    /* Display the pseudo-element icon for "Weather" on wider views */
+    .section-title.weather-info .section-title::after {
+        /* This needs adjustment as section-title is already on the h2 */
+        content: " ☀️";
+        /* Emoticon for sunny conditions. Pick one that matches your static condition */
+        font-size: 1em;
+        /* Adjust size relative to heading */
+        margin-left: 10px;
+        /* Space from heading text */
+        display: inline;
+        /* Ensure it flows with the text */
+    }
+
+    /* Corrected target for pseudo-element: */
+    .weather-info .section-title::after {
+        content: " ☀️";
+        /* Emoticon for sunny conditions. Pick one that matches your static condition */
+        font-size: 1em;
+        /* Adjust size relative to heading */
+        margin-left: 10px;
+        /* Space from heading text */
+        display: inline-block;
+        /* Allows vertical alignment/margins */
+        vertical-align: middle;
+        /* Align with text */
+    }
+
+    .mobile-only-weather-icon {
+        display: none;
+    }
+}
