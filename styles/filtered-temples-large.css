@@ -1,3 +1,14 @@
+/* styles/filtered-temples.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+}
+
 /* Apply Grid for figure layout */
 @media (min-width: 768px) {
   .temple-cards-container {
