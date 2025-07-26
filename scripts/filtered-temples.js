@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-   
 
     // --- Footer Data Script ---
     document.getElementById("currentyear").textContent = new Date().getFullYear();
     document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
 
-    
-     const menuToggle = document.getElementById("menu-toggle");
-     const navMenu = document.querySelector(".nav-links");
-     if (menuToggle && navMenu) {
-     menuToggle.addEventListener("click", () => {
-       const isVisible = navMenu.classList.toggle("open");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.querySelector(".nav-links");
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            const isVisible = navMenu.classList.toggle("open");
             menuToggle.textContent = isVisible ? "✖" : "☰";
-     });
+        });
     }
 
     // --- Temple Data ---
@@ -93,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             templeName: "Chicago Illinois Temple",
             location: "Chicago, Illinois, United States",
             dedicated: "1985, August, 9-13",
-            area: 37062,    
+            area: 37062,
             imageUrl:
                 "https://churchofjesuschristtemples.org/assets/img/temples/chicago-illinois-temple/chicago-illinois-temple-58403-main.jpg"
         },
@@ -101,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             templeName: "Brigham City Utah Temple",
             location: "Brigham City, Utah, United States",
             dedicated: "2012, September, 23",
-            area: 36000, 
+            area: 36000,
             imageUrl:
                 "https://churchofjesuschristtemples.org/assets/img/temples/brigham-city-utah-temple/brigham-city-utah-temple-39612-main.jpg"
         },
@@ -109,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
             templeName: "Abidjan Ivory Coast Temple",
             location: "Abidjan, Ivory Coast",
             dedicated: "2025, May, 25",
-            area: 17362, 
+            area: 17362,
             imageUrl:
                 "https://churchofjesuschristtemples.org/assets/img/temples/abidjan-ivory-coast-temple/abidjan-ivory-coast-temple-58993-main.jpg"
         },
         {
-            templeName: "Antofagasta Chile Temple", 
+            templeName: "Antofagasta Chile Temple",
             location: "Antofagasta, Chile",
             dedicated: "2019, April, 7",
             area: 26163,
@@ -124,7 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- DOM Elements ---
     const templeCardsContainer = document.querySelector(".temple-cards-container");
-    const navButtons = document.querySelectorAll('nav button');
+    // Get a reference to the main H1 element
+    const mainHeading = document.querySelector('main h1'); // Add this line!
+    const navLinks = document.querySelectorAll('.nav-links a'); // Corrected selector from previous discussion
 
     // --- createTempleCard Function ---
     function createTempleCard(temple) {
@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const img = document.createElement("img");
         img.src = temple.imageUrl;
-        img.alt = `${temple.templeName} Temple`; // Ensure appropriate alt value
-        img.loading = 'lazy'; // Added native lazy loading 
+        img.alt = `${temple.templeName} Temple`;
+        img.loading = 'lazy';
 
         const name = document.createElement("h2");
         name.textContent = temple.templeName;
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dedicated.textContent = `Dedicated: ${temple.dedicated}`;
 
         const area = document.createElement("p");
-        area.textContent = `Area: ${temple.area.toLocaleString()} sq ft`; // Added .toLocaleString() for formatting
+        area.textContent = `Area: ${temple.area.toLocaleString()} sq ft`;
 
         // Assemble the card
         card.appendChild(img);
@@ -164,59 +164,70 @@ document.addEventListener('DOMContentLoaded', () => {
         templeCardsContainer.innerHTML = '';
 
         filteredTemples.forEach(temple => {
-            // Call createTempleCard function to get the card element
             const cardElement = createTempleCard(temple);
             templeCardsContainer.appendChild(cardElement);
         });
     }
 
     // --- Navigation Filtering Logic ---
-    navButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            // Remove 'active' class from all buttons
-            navButtons.forEach(btn => btn.classList.remove('active'));
-            // Add 'active' class to the clicked button
+    // Change navButtons to navLinks here
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior (page refresh)
+
+            // Remove 'active' class from all links
+            navLinks.forEach(item => item.classList.remove('active'));
+            // Add 'active' class to the clicked link
             event.target.classList.add('active');
 
             const filter = event.target.id;
             let filteredTemples = [];
+            let headingText = "Home"; // Default heading text
 
             switch (filter) {
                 case 'old':
-                    // Temples dedicated before 1900
                     filteredTemples = temples.filter(temple => {
-                        // Parse year from "YYYY, Month, Day" format
                         const dedicatedYear = parseInt(temple.dedicated.substring(0, 4));
                         return dedicatedYear < 1900;
                     });
+                    headingText = "Old Temples"; // Update heading text for 'old'
                     break;
                 case 'new':
-                    // Temples dedicated after 2000
                     filteredTemples = temples.filter(temple => {
-                        // Parse year from "YYYY, Month, Day" format
                         const dedicatedYear = parseInt(temple.dedicated.substring(0, 4));
                         return dedicatedYear > 2000;
                     });
+                    headingText = "New Temples"; // Update heading text for 'new'
                     break;
                 case 'large':
-                    // Temples larger than 90,000 square feet
                     filteredTemples = temples.filter(temple => temple.area > 90000);
+                    headingText = "Large Temples"; // Update heading text for 'large'
                     break;
                 case 'small':
-                    // Temples smaller than 10,000 square feet
                     filteredTemples = temples.filter(temple => temple.area < 10000);
+                    headingText = "Small Temples"; // Update heading text for 'small'
                     break;
                 case 'home':
                 default:
-                    // Display all temples
                     filteredTemples = temples;
+                    headingText = "Home"; // Update heading text for 'home' or default
                     break;
             }
+
+            // Update the main h1 text content
+            mainHeading.textContent = headingText; // Add this line!
+
             displayTemples(filteredTemples);
         });
     });
 
     // --- Initial Page Load ---
-    // This call is now correctly inside the DOMContentLoaded listener
+    // Set 'home' link as active on initial load
+    const homeLink = document.getElementById('home');
+    if (homeLink) {
+        homeLink.classList.add('active');
+    }
+    // Set the initial heading for the 'home' view
+    mainHeading.textContent = "Home";
     displayTemples(temples);
-}); // This closing brace } correctly closes the DOMContentLoaded listener
+});
