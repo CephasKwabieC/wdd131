@@ -3,9 +3,15 @@
   .temple-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2rem;
     gap: 2rem;
+    padding: 0 1rem;
   }
-
+main {
+  display: grid;
+  grid-template-columns: 1fr;;
+  gap: 1.5rem;
+}
   main h1 {
     grid-column: 1 / -1;
   }
@@ -15,7 +21,7 @@
     gap: 2rem;
   }
 
-  figcaption {
-    font-size: 1rem;
+ .temple-card {
+    margin-bottom: 0;
   }
 }

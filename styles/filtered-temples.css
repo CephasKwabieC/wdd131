@@ -66,26 +66,41 @@ main h1 {
 }
 
 /* Grid layout for figures */
-.temple-cards-container {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    margin-bottom: 2rem;
+.temple-card {
     background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.temple-cards-container img {
+.temple-card img {
     width: 100%;
     display: block;
     height: 150px;
+    object-fit: cover;
 }
 
-figcaption {
-    padding: 1rem;
-    text-align: center;
-    font-weight: bold;
+.temple-card h2 {
     background-color: #0e70da;
     color: white;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.temple-card p {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: #333;
+    margin: 0;
+}
+
+.temple-card p:last-of-type {
+    padding-bottom: 1rem;
 }
 
 footer {
