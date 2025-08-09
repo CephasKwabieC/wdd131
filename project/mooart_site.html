@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon-Art Designs | Portfolio</title>
+    <meta name="description" content="Showcasing creative web design and development projects by Moon-Art Designs.">
+    <meta name="author" content="Cephas Kwabie / Moon-Art Designs">
+    <meta name="keywords" content="web design, portfolio, creative agency, digital design, Moon-Art Designs">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/moonart_site_small.css">
+    <link rel="stylesheet" href="styles/moonart_site_large.css">
+
+    <script src="scripts/moonart_site.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="#" class="logo-container">
+            <img src="images/logo.webp" alt="Moon-Art Designs Logo" width="150" height="50">
+            <h1>MOON-ART DESIGNS</h1>
+        </a>
+
+        <!-- Hamburger menu for mobile (will be hidden on larger screens by CSS) -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menu toggle button">☰</button>
+
+        <!-- Main navigation for desktop (will be hidden on mobile by CSS) -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile navigation menu (hidden by default, toggled by JS) -->
+        <nav id="mobile-menu" class="mobile-nav hidden-mobile">
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Intro/Banner Section -->
+        <section id="intro" class="banner-section">
+            <div class="banner-content">
+                <h2>Crafting Digital Experiences That Shine</h2>
+                <p>
+                    At Moon-Art Designs, we blend creativity with precision to build stunning and functional websites
+                    that capture your vision.
+                </p>
+                <a href="#portfolio" class="cta-button">
+                    View Our Work
+                </a>
+            </div>
+        </section>
+
+        <!-- Secondary navigation bar (visible on desktop below banner, hidden on mobile) -->
+        <nav class="secondary-nav">
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio-section">
+            <h2>Our Latest Creations</h2>
+            <div class="portfolio-items-container">
+                <!-- Sample Portfolio Item 1 -->
+                <div class="portfolio-item">
+                    <a href="images/banner.pdf" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ellyon.jpg" width="400" height="300"
+                        alt="Project Alpha - Modern Banner Design">
+                    <div class="item-details">
+                        <h3>Project Alpha: Modern Barbershop Sticker Design</h3>
+                        <p>
+                            A sleek and modern barbershop sticker designed to enhance brand visibility and
+                            engagement. This design incorporates bold colors and clean lines to create a striking
+                            visual impact and drive conversion rates.
+                        </p>
+                        <a href="images/banner.pdf" target="_blank" rel="noopener noreferrer" class="project-link">View Project &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Sample Portfolio Item 2 -->
+                <div class="portfolio-item">
+                    <a href="filtered-temples.html" Target="_blank" rel="noopener noreferrer">
+                        <img src="images/payson-utah-temple-exterior-1416671-wallpaper.jpg" width="400" height="300"
+                            alt="Project Beta - Temple Album">
+                    </a>
+                    <div class="item-details">
+                        <h3>Project Beta: Temple Album</h3>
+                        <p>
+                            A beautifully curated album showcasing the intricate details of various temples.
+                        </p>
+                        <a href="images/payson-utah-temple-exterior-1416671-wallpaper.jpg" target="_blank" rel="noopener noreferrer" class="project-link">View Project &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Sample Portfolio Item 3 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x400/8e44ad/f4f4f9?text=Genma+Project" alt="Placeholder image for the Genma Project">
+                    <div class="item-details">
+                        <h3>Genma Project</h3>
+                        <p>This project is a self-referential case study on the creation of this very website. It details the journey from wireframe to a fully responsive, styled web presence, using a collaborative, iterative development process.</p>
+                        <a href="mooart_site.html" class="project-link">View Site →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for Blog Section -->
+        <section id="blog" class="blog-section">
+            <h2>Our Insights & Articles</h2>
+            <p>
+                Coming soon: A space for our thoughts on design, development, and digital trends.
+            </p>
+        </section>
+
+        <!-- Placeholder for Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>
+                Ready to start your next project? We'd love to hear from you!
+            </p>
+            <a href="mailto:cephaskwabiec@gmail.com" class="contact-button">
+                Email Us
+            </a>
+        </section>
+    </main>
+
+    <!-- ======================= -->
+    <!--     FOOTER SECTION      -->
+    <!-- ======================= -->
+    <footer class="main-footer">
+        <div class="social-links">
+            <p>Connect With Us:</p>
+            <div class="social-icons">
+                <!-- Placeholder social icons (replace with actual SVG/Font Awesome icons and links) -->
+                <a href="https://www.linkedin.com/in/cephas-kwabie" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg class="social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/CephasKwabieC" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.777.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1-.322 3.293 1.237.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.29-1.559 3.285-1.237 3.285-1.237.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.765-1.589 8.197-6.091 8.197-11.387c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://x.com/cephaskwabiec" target="_blank" rel="noopener noreferrer"
+                    aria-label="Twitter">
+                    <svg class="social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.081c0 3.242 2.31 5.95 5.397 6.572-.593.163-1.21.26-1.846.26-.455 0-.898-.044-1.33-.124.856 2.105 3.33 3.638 6.307 3.638 3.543 0 6.536-2.907 6.536-5.455 0-.17-.005-.339-.014-.507.958-.694 1.798-1.553 2.464-2.529z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p>&copy; <span id="currentyear"></span> Moon-Art Designs. All rights reserved.</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

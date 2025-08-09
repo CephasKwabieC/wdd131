@@ -1,0 +1,151 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #0e70da;
+    color: white;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+}
+
+/* Navigation - Flex layout */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    flex-wrap: wrap;;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0e70da;
+    color: #18c6e5;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Grid layout for figures */
+.temple-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.temple-card img {
+    width: 100%;
+    display: block;
+    height: 150px;
+    object-fit: cover;
+}
+
+.temple-card h2 {
+    background-color: #0e70da;
+    color: white;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.temple-card p {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: #333;
+    margin: 0;
+}
+
+.temple-card p:last-of-type {
+    padding-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    background: #0e70da;
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+
+
+#menu-toggle {
+    font-size: 1.5rem;
+    background: transparent;
+    border: 0;
+    color: white;
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    display: block;
+}
+
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+/* Larger view: hide hamburger button, show nav normally */
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+

@@ -1,0 +1,106 @@
+/* Styles applied when the screen width is 768px or wider,
+   transitioning from mobile to desktop layout. */
+@media (min-width: 768px) {
+
+    /* Header adjustments */
+    .menu-toggle {
+        display: none;
+        /* Hide hamburger menu on desktop */
+    }
+
+    .main-nav {
+        display: block;
+        /* Show main navigation on desktop */
+    }
+
+    .main-nav ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .main-nav a {
+        color: var(--soft-grayish-white);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-weight: 500;
+    }
+
+    .main-nav a:hover {
+        color: var(--royal-purple);
+    }
+
+    .mobile-nav {
+        display: none !important;
+        /* Ensure mobile menu is hidden on desktop */
+    }
+
+    /* Main content padding and alignment */
+    main {
+        padding: 0 2rem;
+        /* Add some horizontal padding to main content */
+    }
+
+    /* Banner section adjustments */
+    .banner-section {
+        padding: 6rem 2rem;
+        /* More vertical padding for banner */
+    }
+
+    .banner-section h2 {
+        font-size: 3.5rem;
+        /* Larger heading on desktop */
+    }
+
+    .banner-section p {
+        font-size: 1.25rem;
+    }
+
+    /* Secondary navigation */
+    .secondary-nav {
+        display: block;
+        /* Show secondary navigation on desktop */
+    }
+
+    .secondary-nav ul {
+        display: flex;
+        justify-content: center;
+        /* Center nav links */
+        gap: 2.5rem;
+    }
+
+    .secondary-nav a {
+        color: var(--soft-grayish-white);
+        padding: 0.4rem 0;
+        /* Vertical padding */
+        position: relative;
+        /* For underline effect */
+    }
+
+    .secondary-nav a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        /* Position below text */
+        width: 0;
+        height: 2px;
+        background-color: var(--royal-purple);
+        /* Royal Purple underline */
+        transition: width 0.3s ease;
+    }
+
+    .secondary-nav a:hover::after {
+        width: 100%;
+        /* Expand underline on hover */
+    }
+
+    .secondary-nav a:hover {
+        color: var(--royal-purple);
+    }
+
+    /* Portfolio Grid Layout */
+    .portfolio-items-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* 2 or 3 columns on desktop */
+    }
+}
