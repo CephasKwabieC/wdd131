@@ -68,6 +68,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if the element exists.
     if (lastModifiedParagraph) {
         // Set the text content to "Last Modified: " followed by the document's last modified date.
-        lastModifiedParagraph.textContent = 'Last Modified: ' + document.lastModified;
+        lastModifiedParagraph.textContent = `Last Modified: ${document.lastModified}`;
     }
+});
+
+// Defines a project object to store details for the projects
+const projectDetails = {
+    name: 'Project Alpha',
+    category: 'Web Development',
+    link: 'images/banner.pdf',
+    description: 'A modern banner design for a barbershop, focusing on brand engagement and visual impact.'
+};
+
+// You can now access this data easily in your code
+console.log(`The name of my project is: ${projectDetails.name}`);
+console.log(`The project link is: ${projectDetails.link}`);
+
+// Get a reference to your new form
+const contactForm = document.getElementById('contact-form');
+
+// Add an event listener to the form's submit event
+contactForm.addEventListener('submit', function (event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Get the name input from the form
+    const nameInput = document.getElementById('name').value;
+
+    // Save the user's name to localStorage
+    localStorage.setItem('visitorName', nameInput);
+
+    // You can also retrieve it later
+    const storedName = localStorage.getItem('visitorName');
+    console.log(`Hello, ${storedName}! Your message has been sent.`);
 });

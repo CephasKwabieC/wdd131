@@ -24,7 +24,7 @@
 <body>
     <header class="main-header">
         <a href="#" class="logo-container">
-            <img src="images/logo.webp" alt="Moon-Art Designs Logo" width="150" height="50">
+            <img src="images/logo.webp" alt="Moon-Art Designs Logo" loading="lazy" width="150" height="50">
             <h1>MOON-ART DESIGNS</h1>
         </a>
 
@@ -85,7 +85,7 @@
                 <div class="portfolio-item">
                     <a href="images/banner.pdf" target="_blank" rel="noopener noreferrer">
                         <img src="images/ellyon.jpg" width="400" height="300"
-                        alt="Project Alpha - Modern Banner Design">
+                        alt="Project Alpha - Modern Banner Design" loading="lazy">
                     <div class="item-details">
                         <h3>Project Alpha: Modern Barbershop Sticker Design</h3>
                         <p>
@@ -132,15 +132,27 @@
             </p>
         </section>
 
-        <!-- Placeholder for Contact Section -->
+        <!-- Inside your contact-section -->
         <section id="contact" class="contact-section">
             <h2>Get In Touch</h2>
             <p>
-                Ready to start your next project? We'd love to hear from you!
+                Ready to start your next project? Fill out the form below and we'll get back to you!
             </p>
-            <a href="mailto:cephaskwabiec@gmail.com" class="contact-button">
-                Email Us
-            </a>
+        
+            <!-- This is the new form. It replaces the <a> tag. -->
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+        
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
         </section>
     </main>
 
